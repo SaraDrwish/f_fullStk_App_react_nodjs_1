@@ -1,16 +1,64 @@
 
 .hero{
     width: 90%;
-    margin: 11% auto;
-    background-color:rgb(242, 137, 181) ;
+    margin: 9% auto 3% auto;
+    background-color: var(--pinkee) ;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    -ms-border-radius: 2rem;
+    -o-border-radius: 2rem;
 }
 .heroBox{
-background-color: rgb(172, 217, 202);
-width: 80%;
-margin: 2% auto;
-padding: 2%;
-display: flex;
-text-align: center;
+     background-color:  var(--bluee); 
+     border-radius: 2rem;
+      box-shadow: 11px 11px 33px var(--bluee);
+       width: 80%; 
+       margin: 3% auto; 
+       padding: 2%;
+        display: flex; 
+        text-align: center;
+         justify-content: center; align-items: center;
+
+}
+.heroBox form{
+    display: flex;
+    margin: auto ;
+    padding: 2%;
+    text-transform: capitalize;
+    flex-direction: column;
+    width: 55%;
+ 
+}
+.heroBox form h2{
+    padding: 2%;
+    margin: auto 2%;
+    color: var(--pinkee);
+    font-size: 33px;
+}
+.heroBox form input{
+    border: none;
+    outline: none;
+    color: var(--bluee);
+    display: flex;
+    padding: 2%;
+    text-transform: capitalize;
+    width: 90%;
+    margin: 4%;
+    border-radius: 0.4rem;
+    -webkit-border-radius: 0.4rem;
+    -moz-border-radius: 0.4rem;
+    -ms-border-radius: 0.4rem;
+    -o-border-radius: 0.4rem;
+}
+.heroBox form .button {
+ 
 justify-content: center;
-align-items: center;
+    background-color: var(--pinkee);
+}
+.heroBox form a{
+    color: var(--orangee);
+}
+.heroBox form ::placeholder{
+   color: var(--orangee); 
 }

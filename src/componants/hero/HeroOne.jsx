@@ -11,7 +11,7 @@ function HeroOne() {
                <h2>Login</h2>
                <input type="email" name=""  placeholder='your email' /> 
                <input type="password" name=""  placeholder='enter your password' />  
-               <input type="button" value="submit" />    
+               <input type="button" value="login" id='button' className='button' />    
                <br />
                <a href='#'> not sure please register </a>       
             </form>
