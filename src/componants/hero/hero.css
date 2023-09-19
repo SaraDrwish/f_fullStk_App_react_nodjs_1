@@ -1,0 +1,16 @@
+
+.hero{
+    width: 90%;
+    margin: 11% auto;
+    background-color:rgb(242, 137, 181) ;
+}
+.heroBox{
+background-color: rgb(172, 217, 202);
+width: 80%;
+margin: 2% auto;
+padding: 2%;
+display: flex;
+text-align: center;
+justify-content: center;
+align-items: center;
+}

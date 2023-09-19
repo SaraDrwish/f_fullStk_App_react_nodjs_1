@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 22px;
+}
+ul{
+    list-style: none;
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    margin: 1% auto;
+    padding: 1%;
+    width: 90%;
+}
+ul li{
+    display: flex;
+}
+a{
+    color: unset;
+    text-decoration: none;
+}
+.header{
+    background-color: rgb(255, 145, 49);
+    width: 100%;
+    margin: auto ;
+    text-align: center;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+}
+.container{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    width: 90%;
+    /* background-color: rgb(201, 68, 12); */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo{
+/* background-color: brown; */
+width: 16%;
+font-size: 30px;
+display: flex;
+color: rgb(238, 186, 205);
+font-weight: bold;
+}
+.boxLists{
+    /* background-color: rgb(40, 255, 234); */
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+ .boxLists ul li{
+     padding: 2%;
+    margin: 2%;
+    cursor: pointer;
+    transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -ms-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+}
+ .boxLists ul li:hover {
+color: var(--bluee);
+ }
+.rightList{
+width: 20%;
+display: flex;
+justify-content: flex-end;
+margin: auto;
+}
+ .rightList ul li {
+    color: var(--bluee);
+     display: flex;
+     padding: 2%;
+     font-size: 18px;
+     margin: 1%;
+     cursor: pointer;
+     transition: all 0.4s ease;
+     -webkit-transition: all 0.4s ease;
+     -moz-transition: all 0.4s ease;
+     -ms-transition: all 0.4s ease;
+     -o-transition: all 0.4s ease;
+}
+ .rightList ul li:hover {
+     color: rgb(238, 186, 205)  ;
+ }
