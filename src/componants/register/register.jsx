@@ -1,15 +1,16 @@
 import React from 'react'
-// import "./register.css"
-import "../hero/hero.css"
+import "./register.css"
+// import "../hero/hero.css"
+import "../Login/login.css"
 
 
 function Register() {
   return (
-   <div className='register'>
+   <div className='register hero' id='register'>
       <div className="container">
         <div className="heroBox">
             <form action="">
-               <h2>Login</h2>
+               <h2>register</h2>
                <input type="text" name="firstname"  placeholder='Frist name' /> 
                <input type="text" name="lastname"  placeholder='last name' /> 
                <input type="email" name="email"  placeholder='your email' /> 

@@ -1,14 +1,13 @@
 import React from 'react'
-// import "./logout.css"
-import "../hero/hero.css"
+ import "../Login/login.css"
 
 function Logout() {
   return (
-    <div className='logout'>
+    <div className='logout' id='logout'>
       <div className="container">
         <div className="heroBox">
             <form action="">
-               <h2>Login</h2>
+               <h2>Logout</h2>
                <input type="email" name=""  placeholder='your email' /> 
                <input type="password" name=""  placeholder='enter your password' />  
                <input type="button" value="submit" id='button' className='button' />    

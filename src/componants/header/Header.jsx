@@ -9,16 +9,16 @@ function Header() {
                   <div className="logo">My Blog App </div>
                   <div className="boxLists">
                       <ul>
-                        <li>Blogs</li>
-                        <li>My Blogs</li>
-                        <li>Create Blog</li>
+                        <a href="#"><li>Blogs</li></a>
+                         <a href="#"><li>My Blogs</li></a> 
+                        <a href="#"><li>Create Blog</li></a>
                       </ul>
                   </div>
                   <div className="rightList">
                       <ul>
-                          <li>Login</li>
-                          <li>Logout</li>
-                          <li>Register</li>
+                          <a href="Login"><li>Login</li></a>
+                          <a href="logout"><li>Logout</li></a>
+                          <a href="register"><li>Register</li></a>
                       </ul>
                   </div>
               </div>

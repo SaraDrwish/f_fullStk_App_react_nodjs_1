@@ -1,10 +1,9 @@
 import React from 'react'
-import "../hero/hero.css"
-// import "./login.css"
+ import "./login.css"
 
 function Login() {
   return (
-   <div className='hero'>
+    <div className='hero' id='Login'>
       <div className="container">
         <div className="heroBox">
             
@@ -14,7 +13,7 @@ function Login() {
                <input type="password" name=""  placeholder='enter your password' />  
                <input type="button" value="login" id='button' className='button' />    
                <br />
-               <a href='#'> if not sure please register </a>       
+               <a href='#'> not sure please register </a>       
             </form>
         </div>   
       </div>
