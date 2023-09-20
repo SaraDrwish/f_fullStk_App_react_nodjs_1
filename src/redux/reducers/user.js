@@ -1,6 +1,6 @@
 
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
-import { notifyError  } from '../Notify'
+import { notifyError } from '../../componants/Notify'
 import Api from "../../config/api"
 
 export const fetchUserData = createAsyncThunk( 
