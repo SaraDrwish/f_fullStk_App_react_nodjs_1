@@ -12,9 +12,14 @@ import { Route, Routes } from 'react-router-dom';
 // import Notify from "./componants/Notify"
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-
+import {  useDispatch, useSelector } from 'react-redux'
  
 function App() {
+
+  const isLogin = useSelector( (state)=>state.user.isLogin )
+  const user = useSelector((state) => state.user.data)
+  const dispatch = useDispatch()
+
   return (
     <div className="App">
       <header className="App-header">
@@ -22,10 +27,13 @@ function App() {
         <ToastContainer/> 
         <Routes>
           <Route path="/" element={<Blogs />} />
-          {/* <Route path="/blogs" element={<Blogs />} /> */}
-          <Route path="/myBlogs" element={<UserBlog />} />
-          <Route path="/CreateBlog" element={<CreateBlog />} />
-          <Route path="/blogDetails/:id" element={< BlogDetails />} />
+          {isLogin && user.isAdmin && <Route path="/blogs" element={<Blogs />} /> }
+          {isLogin && <Route path="/myBlogs" element={<UserBlog />} />}
+          {isLogin && <Route path="/CreateBlog" element={<CreateBlog />} />  }
+          {isLogin && <Route path="/blogDetails/:id" element={< BlogDetails />} />}
+          
+          <Route path="+" element={<Blogs />} />
+         
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>

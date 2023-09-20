@@ -77,9 +77,7 @@ const Register=()=>{
               <input type="password" name="rePassword" value={inputs.rePassword} onChange={handleChange}
                 placeholder='re password' required />  
                 
-              <input type="submit" value="register" id="button" disabled={loading}  onClick={() => navigate("/login")} />
-              {/* <input type="submit" value="register" id="button"   /> */}
- 
+              <input type="submit" value="register" id="button" disabled={loading}  onClick={() => navigate("/login")} /> 
                {/* <button type='submit' value="register" id='button' className='button' onClick={navigate("Login")}> register </button> */}
                <br />
                 <a href='#'> if you already have an account <span> login </span>  </a>       
