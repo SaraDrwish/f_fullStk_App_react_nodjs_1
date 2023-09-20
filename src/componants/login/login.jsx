@@ -1,11 +1,11 @@
 import React , {useState } from 'react'
 import "./login.css"
 import {useNavigate} from "react-router-dom"
-// import { useDispatch } from 'react-redux'
+import { useDispatch  , useSelector } from 'react-redux'
 import Api from "../../config/api"
-import { notifyError ,notifySuccess } from '../Notify'
-
-import { login } from '../../redux/reducers/user'
+import {notifyError,notifySuccess} from '../Notify'
+import {fetchUserData} from "../../redux/reducers/user"
+// import { login } from '../../redux/reducers/user'
 
 
 
@@ -13,8 +13,11 @@ function Login() {
 
   const navigate = useNavigate();
 
-  // const dispatch =/ useDispatch();
+  const dispatch = useDispatch();
 
+  // const user = useSelector( (state)=>state.user.isLogin )
+  // console.log(user)
+  
   const [loading, setLoading] = useState(false);
 
 
@@ -40,6 +43,7 @@ function Login() {
           notifySuccess("success login")
           navigate("/");
           setLoading(false)
+          dispatch(fetchUserData())
 
         })
         .catch((error) => {

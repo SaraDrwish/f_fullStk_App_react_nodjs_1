@@ -1,7 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useNavigate , Link } from 'react-router-dom'
 import "./header.css"
+import { useDispatch , useSelector } from 'react-redux'
+import {fetchUserData} from "../../redux/reducers/user"
+
+
 
 function Header() {
+
+  const isDispatch = useDispatch()
+  const navigate = useNavigate()
+  const [value, setValue] = useState()
+  
+
+
+  const isLogin = useSelector( (state)=>state.user.isLogin )
+  const user = useSelector( (state)=>state.user.user )
+
+
   return (
     <div className='header'>
           <div className='container'>
