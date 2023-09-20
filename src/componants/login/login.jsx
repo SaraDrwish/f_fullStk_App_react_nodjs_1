@@ -1,16 +1,19 @@
 import React , {useState } from 'react'
 import "./login.css"
 import {useNavigate} from "react-router-dom"
-import { useDispatch } from 'react-redux'
-
+// import { useDispatch } from 'react-redux'
 import Api from "../../config/api"
 import { notifyError ,notifySuccess } from '../Notify'
+
+import { login } from '../../redux/reducers/user'
+
+
 
 function Login() {
 
   const navigate = useNavigate();
 
-  const dispatch = useDispatch();
+  // const dispatch =/ useDispatch();
 
   const [loading, setLoading] = useState(false);
 
@@ -26,8 +29,6 @@ function Login() {
       [e.target.name]: e.target.value,
     }));
   };
-
-
 
   const handleSubmit = async (e) => {
     setLoading(true)
@@ -54,10 +55,6 @@ function Login() {
   };
   
 
-
-
-
-
   return (
     <div className='hero' id='Login'>
       <div className="container">
@@ -67,7 +64,8 @@ function Login() {
                <h2>Login</h2>
                <input type="email"  placeholder='your email'  onChange={handleChange} /> 
                <input type="password"  placeholder='enter your password' onChange={handleChange} />  
-            <input type="button" value="login" id='button' className='button'  />    
+               <input type="button" value="login" id='button' disabled={loading} className='button'   />    
+               {/* <input type="button" value="login" id='button' disabled={loading} className='button' onClick={() => navigate("/") } />     */}
                <br />
                 <a href='register' onClick={() => navigate("/register") } > if not sure please register </a>       
             </form>
