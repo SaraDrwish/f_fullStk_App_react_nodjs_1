@@ -1,7 +1,7 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
-export const counterSlice = createSlice({
+export const user = createSlice({
 
     name: "user",
     initialState: {
@@ -21,6 +21,6 @@ export const counterSlice = createSlice({
 
 })  
 
-export const {login , logout } = counterSlice.actions 
+export const {login , logout } = user.actions 
 
-export default counterSlice.reducer 
+export default user.reducer 

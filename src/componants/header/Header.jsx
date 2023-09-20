@@ -17,8 +17,8 @@ function Header() {
                   <div className="rightList">
                       <ul>
                           <a href="Login"><li>Login</li></a>
-                          <a href="logout"><li>Logout</li></a>
                           <a href="register"><li>Register</li></a>
+                          <a href="logout"><li>Logout</li></a>
                       </ul>
                   </div>
               </div>
