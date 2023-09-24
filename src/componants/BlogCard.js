@@ -6,6 +6,8 @@ import * as React from 'react'
 // import Card from "@mui/material/Card"
 import { useNavigate } from 'react-router-dom'
 import { notifySuccess , notifyError } from "./Notify";
+import  { useDispatch } from "react-redux"
+import {fetchUserBlog} from "../redux/reducers/blogs"
 
 export default function BlogCard({
     title, 
@@ -21,23 +23,31 @@ export default function BlogCard({
 
 {
     const navigate = useNavigate();
+    const dispatch = useDispatch()
     const handleEdit = () => {
         navigate(`BlogDetails${id}`)
     }
 
     const handleDelete = async () => {
-        try {
-            const { data } = await Api.delete(`/blog/${id}`)
+        // try {
+        console.log("running")
+           await Api.delete(`/blog/${id}`)
+            // const { data } = await Api.delete(`/blog/${id}`)
             // const { data } = await axios.delete(`/api/v1/blog/delete-blog/${id}`)
-            if (data?.success) {
-                alert("deleted")
-                window.location.reload()
-                
-            }
-        }
-        catch (error) {
-            console.log("error" , error)
-        }
+            // if (data?.success) {
+            //     alert("deleted")
+            //     window.location.reload()
+            // }
+            .then(() => {
+                notifySuccess("deleted blog")
+                dispatch(fetchUserBlog())
+            })
+        // }
+        .catch ((error)=> {
+            // console.log("error" , error)
+            let errMsg = error?.response?.data?.message || error?.response?.data?.error 
+            notifyError(errMsg)
+        })
     }
 
  return (

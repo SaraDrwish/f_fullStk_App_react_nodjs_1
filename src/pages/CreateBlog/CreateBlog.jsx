@@ -92,9 +92,9 @@ function CreateBlog() {
                 <label htmlFor="" >description</label>
                 <input type="text" value={inputs.content} onChange={handleChange} placeholder='dsc' style={{display:"none"}} required />
                 <label htmlFor="">img</label>
-                <input type="text" placeholder='imge URL' ref={imageField} value={inputs.image} onChange={fileUpload} />
+                <input type="text" placeholder='imge URL' ref={imageField} value={inputs.image}  onChange={fileUpload} />
                 <input type="file" name="image" id="" ref={imageField} onChange={fileUpload} />
-                <img  alt="image" src={ (inputs.image && URL.createObjectURL()  )|| defaultImage } />
+                <img  alt="image" src={ (inputs.image && URL.createObjectURL(inputs.image)  )|| defaultImage } />
                 <button type="button" id='button' className='button' onClick={uploadImage} >Upload image </button>
                 <button type="submit" id='button' className='button'  >submit</button>
         </form>

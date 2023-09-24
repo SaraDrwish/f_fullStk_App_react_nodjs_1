@@ -4,7 +4,7 @@ import { notifyError } from '../../componants/Notify'
 import Api from "../../config/api"
 
 export const fetchUserBlogs = createAsyncThunk( 
-    "user/fetchUserBlogs",
+    "blogs/fetchUserBlogs",
     async (_, thunkApi) => {
         try {
             const response = await Api.get("/blog")
@@ -19,11 +19,35 @@ export const fetchUserBlogs = createAsyncThunk(
     }
 )
 
-export const user = createSlice({
 
-    name: "blog",
+
+export const fetchAminBlogs = createAsyncThunk( 
+    "blogs/fetchAminBlogs",
+    async (_, thunkApi) => {
+        try {
+            const response = await Api.get("/blog/allblogs")
+            return response.data
+        } catch (error) {
+            console.log(error);
+            const errMsg = error?.response?.data?.message || error?.response?.data?.error;
+            notifyError(errMsg)
+            return thunkApi.rejectWithValue(errMsg)
+
+        }
+    }
+)
+
+
+
+
+
+
+export const blogs = createSlice({
+
+    name: "blogs",
     initialState: {
-        date:{},
+        date: {},
+        allData : []
  
     },
     reducers: {
@@ -33,6 +57,10 @@ export const user = createSlice({
     extraReducers: (builder)=> {
         builder.addCase(fetchUserBlogs.fulfilled, (state, action) => {
             state.date = action.payload
+         }) 
+         
+        builder.addCase(fetchAminBlogs.fulfilled, (state, action) => {
+            state.allData = action.payload
          })
 
    
@@ -41,6 +69,6 @@ export const user = createSlice({
 
 })  
 
-// export const {login } = user.actions 
+export const { } = blogs.actions 
 
-export default user.reducer 
+export default blogs.reducer 
