@@ -6,7 +6,8 @@ import { UploadFile } from '@mui/icons-material'
 import defaultImage from "../../default.png"
 import Api from "../../config/api"
 import { notifyError, notifySuccess } from '../Notify'
- 
+import { fetchUserBlogs } from '../../redux/reducers/blogs' 
+import { useDispatch } from 'react-redux'
 
 
 function CreateBlog() {
@@ -14,6 +15,8 @@ function CreateBlog() {
   const id = localStorage.getItem("userId")
   const navigate = useNavigate()
   const imageField = useRef()
+  const dispatch = useDispatch()
+
   const [inputs, setInputs] = useState({
     title : "",
     content: "",
@@ -50,6 +53,7 @@ function CreateBlog() {
       })
         .then(() => {
           notifySuccess("blog createed ")
+          dispatch(fetchUserBlogs())
           setInputs({
              title : "",
              content: "",
@@ -81,7 +85,7 @@ function CreateBlog() {
   return (
     <div className='CreateBlog' id='CreateBlog'   >
       <div className="container">
-        <form action="" onSubmit={handleSubmit} >
+        <form action="sasa" onSubmit={handleSubmit} encType='/sasa' >
                 <h2> CreateBlog </h2>
                 <p>you havent created a blog yet </p>
                 <input type="text" placeholder='title' value={inputs.title} required onChange={handleChange}  />
@@ -89,7 +93,7 @@ function CreateBlog() {
                 <input type="text" value={inputs.content} onChange={handleChange} placeholder='dsc' style={{display:"none"}} required />
                 <label htmlFor="">img</label>
                 <input type="text" placeholder='imge URL' ref={imageField} value={inputs.image} onChange={fileUpload} />
-                <input type="file" name="" id="" />
+                <input type="file" name="image" id="" ref={imageField} onChange={fileUpload} />
                 <img  alt="image" src={ (inputs.image && URL.createObjectURL()  )|| defaultImage } />
                 <button type="button" id='button' className='button' onClick={uploadImage} >Upload image </button>
                 <button type="submit" id='button' className='button'  >submit</button>
